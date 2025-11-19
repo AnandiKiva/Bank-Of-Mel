@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bank of Mel — Withdraw</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="withdraw">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-icon">★</div>
+        <div class="brand-title">Bank of Mel</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-item">Create</a>
+        <a href="deposit.html" class="nav-item">Deposit</a>
+        <a href="withdraw.html" class="nav-item active">Withdraw</a>
+        <a href="balance.html" class="nav-item">Balance</a>
+        <a href="history.html" class="nav-item">History</a>
+        <a href="details.html" class="nav-item">Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="card center-card">
+      <h3 class="card-title"><span class="icon">⬆️</span> Withdraw Money</h3>
+      <p class="muted">Withdraw funds from your account</p>
+
+      <form id="withdrawForm" class="form-grid">
+        <label>
+          <div class="label">Select Account</div>
+          <select id="withdrawAccount" required></select>
+        </label>
+
+        <label>
+          <div class="label">Amount (R)</div>
+          <input id="withdrawAmount" type="number" step="0.01" placeholder="Enter withdrawal amount" required>
+        </label>
+
+        <div style="grid-column:1/-1">
+          <button type="submit" class="btn-primary full">Withdraw</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="footer">© 2025 Bank of Mel. Banking made beautiful.</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bank of Mel — History</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="history">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-icon">★</div>
+        <div class="brand-title">Bank of Mel</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-item">Create</a>
+        <a href="deposit.html" class="nav-item">Deposit</a>
+        <a href="withdraw.html" class="nav-item">Withdraw</a>
+        <a href="balance.html" class="nav-item">Balance</a>
+        <a href="history.html" class="nav-item active">History</a>
+        <a href="details.html" class="nav-item">Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="card center-card wide">
+      <h3 class="card-title"><span class="icon">⏱️</span> Transaction History</h3>
+      <p class="muted">View all your account transactions</p>
+
+      <div class="history-controls">
+        <label>
+          <div class="label small">Select account</div>
+          <select id="historyAccount"></select>
+        </label>
+        <button id="exportHistory" class="btn-ghost">Export CSV</button>
+      </div>
+
+      <div id="historyList" class="history-list"></div>
+    </section>
+
+    <footer class="footer">© 2025 Bank of Mel. Banking made beautiful.</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

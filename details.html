@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bank of Mel — Details</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="details">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-icon">★</div>
+        <div class="brand-title">Bank of Mel</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-item">Create</a>
+        <a href="deposit.html" class="nav-item">Deposit</a>
+        <a href="withdraw.html" class="nav-item">Withdraw</a>
+        <a href="balance.html" class="nav-item">Balance</a>
+        <a href="history.html" class="nav-item">History</a>
+        <a href="details.html" class="nav-item active">Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="card center-card wide">
+      <h3 class="card-title"><span class="icon">🧾</span> Account Details</h3>
+      <p class="muted">Your complete account information</p>
+
+      <div class="details-select">
+        <label>
+          <div class="label small">Select account</div>
+          <select id="detailsAccount"></select>
+        </label>
+      </div>
+
+      <div class="account-overview" id="accountOverview">
+        <!-- Overview rendered by JS -->
+      </div>
+
+      <div class="details-actions">
+        <button id="exportAccountCSV" class="btn-ghost">Export Account CSV</button>
+        <button id="deleteAccountBtn" class="btn-danger">Delete Account</button>
+      </div>
+    </section>
+
+    <footer class="footer">© 2025 Bank of Mel. Banking made beautiful.</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

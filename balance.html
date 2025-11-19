@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bank of Mel — Balance</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="balance">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-icon">★</div>
+        <div class="brand-title">Bank of Mel</div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-item">Create</a>
+        <a href="deposit.html" class="nav-item">Deposit</a>
+        <a href="withdraw.html" class="nav-item">Withdraw</a>
+        <a href="balance.html" class="nav-item active">Balance</a>
+        <a href="history.html" class="nav-item">History</a>
+        <a href="details.html" class="nav-item">Details</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrap">
+    <section class="card center-card">
+      <h3 class="card-title"><span class="icon">💳</span> Current Balance</h3>
+      <p class="muted">View your available funds</p>
+
+      <div class="balance-panel" id="balancePanel">
+        <div class="panel-label">Available Balance</div>
+        <div id="balanceAmount" class="balance-figure">R 0.00</div>
+      </div>
+    </section>
+
+    <footer class="footer">© 2025 Bank of Mel. Banking made beautiful.</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
