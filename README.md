@@ -57,6 +57,3 @@ Styled using:
 ✔ No build tools needed  
 
 ---
-
-### 🔹 Multi-Page Layout  
-Each page is an individual `.html` file:
