@@ -10,6 +10,14 @@
   const currency = (n) => 'R ' + (Number(n)||0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});
   const STORAGE_KEY = 'bankOfMel:v1';
 
+  /* ---------- Simple PIN hashing (demo only) ---------- */
+function hashPIN(pin){
+  return btoa(pin + '::bankofmel'); // simple obfuscation for demo
+}
+function verifyPIN(input, hash){
+  return hashPIN(input) === hash;
+}
+
   /* ---------- State & persistence ---------- */
   let state = { accounts: [], selectedAccountId: null };
 
@@ -38,8 +46,8 @@
   /* ---------- Account helpers ---------- */
   function findAccount(id){ return state.accounts.find(a=>a.id===id) || null; }
 
-  function createAccount(name, number, initial){
-    const acc = { id: uid('acc'), name: name || 'New Account', number: number || (Math.floor(Math.random()*900000000)+100000000).toString(), balance: +Number(initial||0).toFixed(2), createdAt: nowISO(), transactions: [] };
+  function createAccount(name, number, initial, pin){
+    const acc = { id: uid('acc'), name: name || 'New Account', number: number || (Math.floor(Math.random()*900000000)+100000000).toString(), balance: +Number(initial||0).toFixed(2),pinHash: hashPIN(pin),createdAt: nowISO(), transactions: [] };
     if(Number(initial) > 0){
       acc.transactions.unshift({ id: uid('tx'), type:'deposit', amount:+Number(initial), balanceAfter: acc.balance, desc:'Initial deposit', meta:{}, date: nowISO() });
     }
