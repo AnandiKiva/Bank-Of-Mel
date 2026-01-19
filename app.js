@@ -150,6 +150,11 @@ createAccount(name, number, init, pin);
       const amount = parseFloat(document.getElementById('withdrawAmount').value) || 0;
       if(!accId) return alert('Select account');
       try{
+         const pin = document.getElementById('withdrawPIN').value;
+const acc = findAccount(accId);
+if(!verifyPIN(pin, acc.pinHash)){
+  return alert('Incorrect PIN');
+}
         addTransaction(accId, 'withdraw', amount, 'Withdrawal via UI');
         alert('Withdrawal successful');
         form.reset();
