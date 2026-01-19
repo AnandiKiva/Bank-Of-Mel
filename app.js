@@ -252,7 +252,11 @@ if(!verifyPIN(pin, acc.pinHash)){
     const deleteBtn = document.getElementById('deleteAccountBtn');
     if(exportBtn) exportBtn.onclick = () => exportAccountCSV(acc.id);
     if(deleteBtn) deleteBtn.onclick = () => {
-      if(confirm(`Delete account "${acc.name}"? This cannot be undone locally.`)){
+   const pin = prompt('Enter PIN to delete this account');
+   if(!verifyPIN(pin, acc.pinHash)){
+   return alert('Incorrect PIN');
+   }
+       if(confirm(`Delete account "${acc.name}"? This cannot be undone.`)){
         deleteAccount(acc.id);
         // refresh selects and overview
         populateAllSelects();
