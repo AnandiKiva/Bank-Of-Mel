@@ -83,6 +83,11 @@ function verifyPIN(input, hash){
   /* ---------- CSV export ---------- */
   function exportAccountCSV(accountId){
     const acc = findAccount(accountId); if(!acc) return;
+     const pin = prompt('Enter PIN to export transactions');
+     if(!verifyPIN(pin, acc.pinHash)){
+    alert('Incorrect PIN');
+    return;
+     }
     const rows = [['date','type','amount','balanceAfter','description']];
     acc.transactions.slice().reverse().forEach(tx => rows.push([tx.date, tx.type, tx.amount, tx.balanceAfter, tx.desc || '']));
     const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
