@@ -1,8 +1,3 @@
-/* app.js — shared for multi-page Bank of Mel demo
-   - Uses localStorage to persist accounts & transactions
-   - Exposes page-specific initialization based on body[data-page]
-*/
-
 (() => {
   /* ---------- Utilities ---------- */
   const uid = (p='id') => p + '_' + Math.random().toString(36).slice(2,9);
@@ -112,15 +107,16 @@ function verifyPIN(input, hash){
     const form = document.getElementById('createAccountForm');
     form && form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('createFullName').value.trim();
-      const number = document.getElementById('createAccountNumber').value.trim();
-       const init = parseFloat(document.getElementById('createInitial').value) || 0;
-       const pin = document.getElementById('createPIN').value;
-       
-       if(!/^\d{4}$/.test(pin)){
-  return alert('PIN must be exactly 4 digits');
-}
-createAccount(name, number, init, pin);
+      try{
+        const name = document.getElementById('createFullName').value.trim();
+        const number = document.getElementById('createAccountNumber').value.trim();
+        const init = parseFloat(document.getElementById('createInitial').value) || 0;
+        const pin = document.getElementById('createPIN').value;
+
+        if(!/^\d{4}$/.test(pin)){
+          return alert('PIN must be exactly 4 digits');
+        }
+        createAccount(name, number, init, pin);
         alert('Account created');
         // clear
         form.reset();
